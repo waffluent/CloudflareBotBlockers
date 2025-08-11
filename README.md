@@ -284,7 +284,7 @@ Blocks traffic claiming to be Bingbot but not from Microsoft’s official IP ran
 
 ---
 
-## **3. Other Known AI Spoofs**
+## **3. Other Known Spoofs**
 
 **Expression:**
 
