@@ -232,14 +232,66 @@ You can add each category as a separate **Custom Rule** in Cloudflare’s WAF:
 (http.user_agent contains "BehloolBot")
 ```
 
+# Stealth / Impersonating AI Crawlers
+
+These rules detect and block **stealth AI crawlers** that impersonate legitimate search engine bots (e.g., Perplexity pretending to be Googlebot) but operate from unauthorized networks.
+They combine **User-Agent string checks** with **verified IP range validation** so you can block only the imposters while still allowing the real bots.
+
 ---
 
-## Testing
+## ⚠️ Important Caveat
 
-Use `curl -A "<UA>" -I https://yourdomain.tld/` to simulate each bot and confirm it’s blocked.
-Example:
+Search engine and bot providers **regularly change their IP ranges**.
+You **must** keep these IP/CIDR lists up to date or you risk blocking legitimate crawlers.
 
-```bash
-curl -A "curl/8.0.0" -I https://yourdomain.tld/     # should block
-curl -A "Mozilla/5.0 HeadlessChrome/120.0" -I https://yourdomain.tld/ # should block
+### Recommended Update Frequency
+
+* **Monthly** minimum for high-traffic sites.
+* **Before major site launches** or changes to SEO strategy.
+* After **receiving reports from Google Search Console** or similar tools about crawler access issues.
+
+Reference official IP lists:
+
+* Googlebot: [https://developers.google.com/search/docs/crawling-indexing/Verifying-googlebot](https://developers.google.com/search/docs/crawling-indexing/Verifying-googlebot)
+* Bingbot: [https://www.bing.com/toolbox/bingbot.json](https://www.bing.com/toolbox/bingbot.json)
+* Applebot: [https://support.apple.com/en-us/HT204683](https://support.apple.com/en-us/HT204683)
+* Baiduspider: [https://help.baidu.com/question?prod\_en=master\&class=360\&id=1000979](https://help.baidu.com/question?prod_en=master&class=360&id=1000979)
+* DuckDuckBot: [https://help.duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/](https://help.duckduckgo.com/duckduckgo-help-pages/results/duckduckbot/)
+
+---
+
+## **1. Googlebot Imposters**
+
+**Expression:**
+
 ```
+(http.user_agent contains "Googlebot" and not ip.src in {66.249.64.0/19 64.233.160.0/19 72.14.192.0/18 203.208.32.0/19 74.125.0.0/16 209.85.128.0/17 216.239.32.0/19 108.177.8.0/21 172.217.0.0/16 66.102.0.0/20})
+```
+
+Blocks traffic claiming to be Googlebot but not from Google’s official IP ranges.
+
+---
+
+## **2. Bingbot Imposters**
+
+**Expression:**
+
+```
+(http.user_agent contains "bingbot" and not ip.src in {13.66.139.0/24 13.66.144.0/20 13.104.0.0/14 13.105.0.0/16 13.107.0.0/16 40.77.167.0/24 40.77.169.0/24 40.77.170.0/23 40.77.172.0/22})
+```
+
+Blocks traffic claiming to be Bingbot but not from Microsoft’s official IP ranges.
+
+---
+
+## **3. Other Known AI Spoofs**
+
+**Expression:**
+
+```
+(http.user_agent contains "DuckDuckBot" and not ip.src in {20.191.0.0/16 40.88.21.0/24 40.88.22.0/23}) or
+(http.user_agent contains "Applebot" and not ip.src in {17.0.0.0/8}) or
+(http.user_agent contains "Baiduspider" and not ip.src in {180.76.0.0/16})
+```
+
+Blocks traffic claiming to be DuckDuckBot, Applebot, or Baiduspider but coming from non-authorized ranges.
