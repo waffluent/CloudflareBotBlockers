@@ -198,7 +198,7 @@ You can add each category as a separate **Custom Rule** in Cloudflare’s WAF:
 
 ---
 
-### **4. Asian & Russian Search / Regional Bots**
+### **4. Asian, Chinese, Russian Search / Regional Bots**
 
 ```
 (
