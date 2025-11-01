@@ -95,59 +95,73 @@ You can add each category as a separate **Custom Rule** in Cloudflare’s WAF:
 ### **2. General Scrapers / Libraries**
 
 ```
-(http.user_agent contains "Apache-HttpClient") or
-(http.user_agent contains "curl") or
-(http.user_agent contains "Wget") or
-(http.user_agent contains "python-requests") or
-(http.user_agent contains "Python-urllib") or
-(http.user_agent contains "libwww-perl") or
-(http.user_agent contains "httpunit") or
-(http.user_agent contains "okhttp") or
-(http.user_agent contains "http.rb") or
-(http.user_agent contains "AHC/") or
-(http.user_agent contains "Jetty/") or
-(http.user_agent contains "HttpUrlConnection") or
-(http.user_agent contains "axios") or
-(http.user_agent contains "zgrab") or
-(http.user_agent contains "crawler4j") or
-(http.user_agent contains "nutch") or
-(http.user_agent contains "SimpleCrawler") or
-(http.user_agent contains "newspaper/") or
-(http.user_agent contains "http_get") or
-(http.user_agent contains "CapsuleChecker") or
-(http.user_agent contains "MetaURI") or
-(http.user_agent contains "cXensebot") or
-(http.user_agent contains "SMTBot") or
-(http.user_agent contains "Gluten Free Crawler") or
-(http.user_agent contains "Sonic/") or
-(http.user_agent contains "Sysomos") or
-(http.user_agent contains "deadlinkchecker") or
-(http.user_agent contains "check_http") or
-(http.user_agent contains "BDCbot") or
-(http.user_agent contains "EZID") or
-(http.user_agent contains "ICC-Crawler") or
-(http.user_agent contains "ArchiveBot") or
-(http.user_agent contains "magpie-crawler") or
-(http.user_agent contains "ScoutJet") or
-(http.user_agent contains "sentry/") or
-(http.user_agent contains "seoscanners") or
-(http.user_agent contains "MauiBot") or
-(http.user_agent contains "AlphaBot") or
-(http.user_agent contains "SBL-BOT") or
-(http.user_agent contains "adscanner") or
-(http.user_agent contains "acapbot") or
-(http.user_agent contains "Domain Re-Animator Bot") or
-(http.user_agent contains "discobot") or
-(http.user_agent contains "BLEXBot") or
-(http.user_agent contains "ExtLinksBot") or
-(http.user_agent contains "SurveyBot") or
-(http.user_agent contains "Miniflux") or
-(http.user_agent contains "Feedspotbot") or
-(http.user_agent contains "tracemyfile") or
-(http.user_agent contains "Seekport Crawler") or
-(http.user_agent contains "ZoomBot") or
-(http.user_agent contains "MoodleBot") or
-(http.user_agent contains "jpg-newsbot/")
+(
+    (http.user_agent contains "AHC/") or
+    (http.user_agent contains "AlphaBot") or
+    (http.user_agent contains "Apache-HttpClient") or
+    (http.user_agent contains "ArchiveBot") or
+    (http.user_agent contains "axios") or
+    (http.user_agent contains "BDCbot") or
+    (http.user_agent contains "BLEXBot") or
+    (http.user_agent contains "CapsuleChecker") or
+    (http.user_agent contains "check_http") or
+    (http.user_agent contains "CommonCrawl") or
+    (http.user_agent contains "crawler4j") or
+    (http.user_agent contains "curl") or
+    (http.user_agent contains "cXensebot") or
+    (http.user_agent contains "deadlinkchecker") or
+    (http.user_agent contains "DeepMind") or
+    (http.user_agent contains "discobot") or
+    (http.user_agent contains "DirBuster") or
+    (http.user_agent contains "Domain Re-Animator Bot") or
+    (http.user_agent contains "EZID") or
+    (http.user_agent contains "ExtLinksBot") or
+    (http.user_agent contains "Feedspotbot") or
+    (http.user_agent contains "Gluten Free Crawler") or
+    (http.user_agent contains "Go-http-client") or
+    (http.user_agent contains "HttpUrlConnection") or
+    (http.user_agent contains "http_get") or
+    (http.user_agent contains "http.rb") or
+    (http.user_agent contains "httpunit") or
+    (http.user_agent contains "ICC-Crawler") or
+    (http.user_agent contains "Jetty/") or
+    (http.user_agent contains "jpg-newsbot/") or
+    (http.user_agent contains "libwww-perl") or
+    (http.user_agent contains "Lua-resty-http") or
+    (http.user_agent contains "magpie-crawler") or
+    (http.user_agent contains "MauiBot") or
+    (http.user_agent contains "MetaURI") or
+    (http.user_agent contains "Miniflux") or
+    (http.user_agent contains "MoodleBot") or
+    (http.user_agent contains "newspaper/") or
+    (http.user_agent contains "nmap") or
+    (http.user_agent contains "nutch") or
+    (http.user_agent contains "okhttp") or
+    (http.user_agent contains "PhindBot") or
+    (http.user_agent contains "PHP/") or
+    (http.user_agent contains "Playwright") or
+    (http.user_agent contains "PocketParser") or
+    (http.user_agent contains "python-requests") or
+    (http.user_agent contains "Python-urllib") or
+    (http.user_agent contains "RestSharp") or
+    (http.user_agent contains "Ruby") or
+    (http.user_agent contains "ScoutJet") or
+    (http.user_agent contains "SBL-BOT") or
+    (http.user_agent contains "seoscanners") or
+    (http.user_agent contains "Seekport Crawler") or
+    (http.user_agent contains "sentry/") or
+    (http.user_agent contains "SimpleCrawler") or
+    (http.user_agent contains "SMTBot") or
+    (http.user_agent contains "Sonic/") or
+    (http.user_agent contains "sqlmap") or
+    (http.user_agent contains "SurveyBot") or
+    (http.user_agent contains "Sysomos") or
+    (http.user_agent contains "tracemyfile") or
+    (http.user_agent contains "Wget") or
+    (http.user_agent contains "WinHttp") or
+    (http.user_agent contains "zgrab") or
+    (http.user_agent contains "ZoomBot")
+)
 ```
 
 ---
