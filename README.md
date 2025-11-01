@@ -201,24 +201,55 @@ You can add each category as a separate **Custom Rule** in Cloudflare’s WAF:
 ### **4. Asian & Russian Search / Regional Bots**
 
 ```
-(http.user_agent contains "Baidu") or
-(http.user_agent contains "Baiduspider") or
-(http.user_agent contains "Baidu-YunGuanCe") or
-(http.user_agent contains "YisouSpider") or
-(http.user_agent contains "Sosospider") or
-(http.user_agent contains "HaosouSpider") or
-(http.user_agent contains "YodaoBot") or
-(http.user_agent contains "ToutiaoSpider") or
-(http.user_agent contains "Sogou") or
-(http.user_agent contains "YandexBot") or
-(http.user_agent contains "YandexWebmaster") or
-(http.user_agent contains "Mail.RU_Bot") or
-(http.user_agent contains "Yeti/") or
-(http.user_agent contains "Daum/") or
-(http.user_agent contains "coccoc") or
-(http.user_agent contains "imagecoccoc") or
-(http.user_agent contains "ichiro") or
-(http.user_agent contains "Y!J")
+(
+    (http.user_agent contains "Baidu") or
+    (http.user_agent contains "Baiduspider") or
+    (http.user_agent contains "Baidu-YunGuanCe") or
+    (http.user_agent contains "BaiduGame") or
+    (http.user_agent contains "BaiduImageSpider") or
+    (http.user_agent contains "BaiduMoba") or
+    (http.user_agent contains "BaiduVideo") or
+    (http.user_agent contains "Bytespider") or
+    (http.user_agent contains "ByteDanceSpider") or
+    (http.user_agent contains "ToutiaoSpider") or
+    (http.user_agent contains "360Spider") or
+    (http.user_agent contains "HaosouSpider") or
+    (http.user_agent contains "Sogou") or
+    (http.user_agent contains "SogouPicSpider") or
+    (http.user_agent contains "SogouNewsSpider") or
+    (http.user_agent contains "Sosospider") or
+    (http.user_agent contains "YisouSpider") or
+    (http.user_agent contains "YodaoBot") or
+    (http.user_agent contains "Yisou") or
+    (http.user_agent contains "PetalBot") or
+    (http.user_agent contains "HuaweiWebCrawler") or
+    (http.user_agent contains "YandexBot") or
+    (http.user_agent contains "YandexImages") or
+    (http.user_agent contains "YandexMetrika") or
+    (http.user_agent contains "YandexAccessibilityBot") or
+    (http.user_agent contains "YandexWebmaster") or
+    (http.user_agent contains "YandexVideo") or
+    (http.user_agent contains "YandexMobileBot") or
+    (http.user_agent contains "Mail.RU_Bot") or
+    (http.user_agent contains "MailRuBot") or
+    (http.user_agent contains "Yeti/") or
+    (http.user_agent contains "Daum/") or
+    (http.user_agent contains "Daumoa") or
+    (http.user_agent contains "BLEXBot-KR") or
+    (http.user_agent contains "coccoc") or
+    (http.user_agent contains "imagecoccoc") or
+    (http.user_agent contains "ichiro") or
+    (http.user_agent contains "naverbot") or
+    (http.user_agent contains "naverwebbot") or
+    (http.user_agent contains "NaverBot") or
+    (http.user_agent contains "Y!J") or
+    (http.user_agent contains "Y!J-BRI") or
+    (http.user_agent contains "Y!J-MSC") or
+    (http.user_agent contains "Y!J-News") or
+    (http.user_agent contains "Y!J-AdsCrawler") or
+    (http.user_agent contains "SeznamBot") or
+    (http.user_agent contains "MJ12bot-CN")
+)
 ```
 
 ---
