@@ -52,24 +52,42 @@ You can add each category as a separate **Custom Rule** in Cloudflare’s WAF:
 ### **1. AI / LLM Bots**
 
 ```
-(http.user_agent contains "AI21Labs") or
-(http.user_agent contains "Anthropic") or
-(http.user_agent contains "ChatGPT") or
-(http.user_agent contains "ChatGPT-User") or
-(http.user_agent contains "Claude-Web") or
-(http.user_agent contains "ClaudeBot") or
-(http.user_agent contains "DuckAssistBot") or
-(http.user_agent contains "GPTBot") or
-(http.user_agent contains "MistralAI-User") or
-(http.user_agent contains "MetaAI") or
-(http.user_agent contains "MetaBot") or
-(http.user_agent contains "NeevaBot") or
-(http.user_agent contains "OAI-SearchBot") or
-(http.user_agent contains "OpenAI") or
-(http.user_agent contains "Perplexity-User") or
-(http.user_agent contains "PerplexityBot") or
-(http.user_agent contains "ReplikaBot") or
-(http.user_agent contains "You.com")
+(
+    (http.user_agent contains "AI21Labs") or
+    (http.user_agent contains "AI2Bot") or
+    (http.user_agent contains "Anthropic") or
+    (http.user_agent contains "Applebot-Extended") or
+    (http.user_agent contains "Bytespider") or
+    (http.user_agent contains "CCBot") or
+    (http.user_agent contains "ChatGPT") or
+    (http.user_agent contains "ChatGPT-User") or
+    (http.user_agent contains "Claude-Web") or
+    (http.user_agent contains "ClaudeBot") or
+    (http.user_agent contains "Cohere") or
+    (http.user_agent contains "DuckAssistBot") or
+    (http.user_agent contains "GPTBot") or
+    (http.user_agent contains "Google-Extended") or
+    (http.user_agent contains "MistralAI-User") or
+    (http.user_agent contains "MetaAI") or
+    (http.user_agent contains "MetaBot") or
+    (http.user_agent contains "NeevaBot") or
+    (http.user_agent contains "OAI-SearchBot") or
+    (http.user_agent contains "OpenAI") or
+    (http.user_agent contains "PerplexityBot") or
+    (http.user_agent contains "Perplexity-User") or
+    (http.user_agent contains "ReplikaBot") or
+    (http.user_agent contains "You.com") or
+    (http.user_agent contains "xAI") or
+    (http.user_agent contains "Grok") or
+    (http.user_agent contains "PhindBot") or
+    (http.user_agent contains "KagiBot") or
+    (http.user_agent contains "BingPreview") or
+    (http.user_agent contains "Copilot") or
+    (http.user_agent contains "ErnieBot") or
+    (http.user_agent contains "BaiduSpider") or
+    (http.user_agent contains "DeepMind") or
+    (http.user_agent contains "cohere-ai")
+)
 ```
 
 ---
