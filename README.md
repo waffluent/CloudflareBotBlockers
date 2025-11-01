@@ -169,8 +169,31 @@ You can add each category as a separate **Custom Rule** in Cloudflare’s WAF:
 ### **3. Headless Browsers / Automation**
 
 ```
-(http.user_agent contains "PhantomJS") or
-(http.user_agent contains "HeadlessChrome")
+(
+    (http.user_agent contains "HeadlessChrome") or
+    (http.user_agent contains "Chrome/") and (http.user_agent contains "Headless") or
+    (http.user_agent contains "Puppeteer") or
+    (http.user_agent contains "Playwright") or
+    (http.user_agent contains "Selenium") or
+    (http.user_agent contains "SlimerJS") or
+    (http.user_agent contains "PhantomJS") or
+    (http.user_agent contains "Node.js") or
+    (http.user_agent contains "Zombie.js") or
+    (http.user_agent contains "Mechanize") or
+    (http.user_agent contains "CasperJS") or
+    (http.user_agent contains "Splash") or
+    (http.user_agent contains "Nightmare") or
+    (http.user_agent contains "SpookyJS") or
+    (http.user_agent contains "Phantom") or
+    (http.user_agent contains "Electron") or
+    (http.user_agent contains "Cypress") or
+    (http.user_agent contains "Kantu") or
+    (http.user_agent contains "HeadlessShell") or
+    (http.user_agent contains "Playwright-Test") or
+    (http.user_agent contains "Ghost") or
+    (http.user_agent contains "Dalvik") or
+    (http.user_agent contains "Android WebView") and (http.user_agent contains "Headless")
+)
 ```
 
 ---
